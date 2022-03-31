@@ -28,6 +28,6 @@ Game.setScreen = function(tab) {
 	$(tab).addClass('visible');
 	$(tab).removeClass('hidden');
 }
-Game.initSlot = function(slot) {
-	
+Game.slot = function(slot) {
+	this.time = 0;
 }
