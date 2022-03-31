@@ -14,7 +14,9 @@ Game.load = function(slot) {
 Game.new = function(slot) {
 	if (slot === 0) {
 		Game.setScreen("#new")
+		return
 	}
+	Game.saves["slot"+slot] = new Game.slot()
 }
 Game.save = function() {
 	localStorage.setItem('psim-save', btoa(JSON.stringify(Game.saves)));
@@ -28,6 +30,6 @@ Game.setScreen = function(tab) {
 	$(tab).addClass('visible');
 	$(tab).removeClass('hidden');
 }
-Game.slot = function(slot) {
+Game.slot = function() {
 	this.time = 0;
 }
