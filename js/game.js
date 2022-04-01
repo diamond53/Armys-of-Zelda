@@ -3,6 +3,7 @@ Game.saves = {'slot1':{}, 'slot2':{}, 'slot3':{}};
 Game.init = function() {
 	Game.setScreen("#start");
 	Game.loadSave()
+	Game.main()
 }
 $(document).ready(function() {
 	Game.init()
@@ -25,8 +26,9 @@ Game.save = function() {
 	localStorage.setItem('psim-save', btoa(JSON.stringify(Game.saves)));
 }
 Game.loadSave = function() {
-	Game.saves = JSON.parse(atob(localStorage.getItem('psim-save')));
-	Game.main()
+	if (localStorage.getItem('psim-save')) {
+		Game.saves = JSON.parse(atob(localStorage.getItem('psim-save')));
+	}
 }
 Game.setScreen = function(tab) {
 	$(".screen").removeClass('hidden visible');
