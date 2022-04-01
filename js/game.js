@@ -26,6 +26,7 @@ Game.save = function() {
 }
 Game.loadSave = function() {
 	Game.saves = JSON.parse(atob(localStorage.getItem('psim-save')));
+	Game.main()
 }
 Game.setScreen = function(tab) {
 	$(".screen").removeClass('hidden visible');
