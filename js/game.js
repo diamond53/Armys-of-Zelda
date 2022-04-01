@@ -8,12 +8,13 @@ $(document).ready(function() {
 })
 Game.load = function(slot) {
 	if (slot === 0) {
-		Game.setScreen("#load")
+		Game.setScreen("#saves")
+		return
 	}
 }
 Game.new = function(slot) {
 	if (slot === 0) {
-		Game.setScreen("#new")
+		Game.setScreen("#saves")
 		return
 	}
 	Game.saves["slot"+slot] = new Game.slot()
