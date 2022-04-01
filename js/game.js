@@ -1,7 +1,8 @@
 window.Game = {};
 Game.saves = {'slot1':{}, 'slot2':{}, 'slot3':{}};
 Game.init = function() {
-	Game.setScreen("#start")
+	Game.setScreen("#start");
+	Game.loadSave()
 }
 $(document).ready(function() {
 	Game.init()
@@ -18,6 +19,7 @@ Game.new = function(slot) {
 		return
 	}
 	Game.saves["slot"+slot] = new Game.slot()
+	Game.save()
 }
 Game.save = function() {
 	localStorage.setItem('psim-save', btoa(JSON.stringify(Game.saves)));
@@ -33,4 +35,8 @@ Game.setScreen = function(tab) {
 }
 Game.slot = function() {
 	this.time = 0;
+}
+Game.main = function() {
+	window.requestAnimationFrame(Game.main);
+	Game.save()
 }
