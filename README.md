@@ -1,6 +1,4 @@
-# Armys-Of-War
+# [Armys-Of-War](https://diamond53.github.io/ArmysOfWar/)
 Just a starter name I will change later
-
-Latest Version: [Link](https://diamond53.github.io/ArmysOfWar/)
 
 WE NEED A LOGO & NAME
