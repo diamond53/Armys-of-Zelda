@@ -1,7 +1,7 @@
 window.Game = {}; // Initiate Game object
 Game.saves = {'slot1':{}, 'slot2':{}, 'slot3':{}}; // Initiate save structure
 Game.init = function() { // Function called when page start
-	Game.setScreen("#load");
+	Game.setScreen("#start");
 	Game.loadSave()
 	Game.main()
 }
